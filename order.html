@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONLINE FOOD ORDERING SYSTEM</title>
+    <link rel="stylesheet" href="foodstyle.css">
+    <link rel="stylesheet" media="screen and (max-width: 1170px)" href="phone.css">
+</head>
+<body>
+
+    <script>
+        function myOrder(){
+             alert("Your Order have been placed");
+
+        }
+
+        function Booking(){
+            alert("Your Booking has Been Confirmed");
+        }
+		function calculateAmount(val) {
+                var tot_price = val * 2 ;
+                /*display the result*/
+                var divobj = document.getElementById('tot_amount');
+                divobj.value = tot_price;
+            }
+    </script>
+
+
+
+    <!--THIS IS NAV BAR-->
+    <nav id="navbar">
+        <div id="logo">
+            <img src="logo.png" alt="MyOnlineMeal.com">
+        </div>
+        <ul>
+            <li class="item"><a href="#home">Home</a></li>
+            <li class="item"><a href="#services-container">Services</a></li>
+            <li class="item"><a href="#Deal-of-the-day">Deal Of The Day</a></li>
+            <li class="item"><a href="#contact">Contact Us </a></li>
+            <li class="item"><a href="#order">Order</a></li>
+			<li class="item"><a href="#reserve">Reservation</a></li>
+        </ul>
+    </nav>
+
+    <!--HOME PAGE-->
+    <section id="home">
+        <h1 class="h-primary">Welcome to MyOnlineMeal</h1>
+        <p> We Deliver Good Quality Food With </p>
+        <p>Great Service TO Our Customers </p>
+    </section>
+
+
+   <!--THIS IS SEVICE PAGE-->
+    <section id="services-container">
+        <h1 class="h-primary center">Our Services</h1>
+        <div id="services">
+            <div class="box">
+                <img src="card1.jpeg" alt="">
+                <h2 class="h-secondary center">Food Ordering</h2>
+                <p class="center">We Provide Food ordering 
+				Order From Us The Best Food In Town With hygiene From Our Place To Your place </p>
+                    <button  class="button"><a href="#order" >Order Now</a> </button>
+            </div>
+            <div class="box">
+                <img src="card3.jpeg" alt="">
+                <h2 class="h-secondary center">Catering</h2>
+                <p class="center">We Undertake Party Orders, Special Occasion Dinner Orders And Many More For further information Do contact us from Reservation page</p>
+                    <button  class="button" > <a href="#reserve"> Book Now</a> </button>
+            </div>
+            <div class="box">
+                <img src="card2.jpg" alt="">
+                <h2 class="h-secondary center">Bulk Ordering</h2>
+                <p class="center"> Order Must be Given Before Hand WIth 50% Amount From The BIll,
+				Late Orders Are Not Taken And After Confirmation Orders And Cash Will Not Be Refunded</p>
+                    <button class="button" >  <a href="#reserve" > Contact Us</a></button>
+            </div>
+        </div>
+    </section>
+
+
+    <!--THIS IS DEAL OF THE DAY-->
+    <section id="Deal-of-the-day">
+        <h1 class="h-primary center">Deal Of The Day!</h1>
+        <div id="deal">
+            <div class="deal-item">
+                <img src="deal1.jpeg" alt="Our Client">
+            </div>
+            <div class="deal-item">
+                <img src="deal2.jpeg" alt="Our Client">
+            </div>
+        </div>
+
+    </section>
+
+
+    <!--THIS IS CONTACT US PAGE-->
+    <section id="contact">
+        <h1 class="h-primary center">Contact Us </h1>
+        <div id="contact-box">
+            <form action="contact">
+                <div class="form-group">
+                    <label for="name">Name: </label>
+                    <input type="text" name="name" id="name" placeholder="Enter your name" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="email">Email: </label>
+                    <input type="email" name="name" id="email" placeholder="Enter your email" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="phone">Phone Number: </label>
+                    <input type="tel"  id="phone" placeholder="Enter your phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="message">Message: </label>
+                    <textarea name="message" id="message" cols="30" rows="10" minlength="30"></textarea>
+                </div>
+                <div>
+                    <button class="btn">Submit</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!--This is order now page-->
+    <section id="order" >
+        <h1 class="h-primary center">Order Now</h1>
+
+        <div id="order-box">
+            <form action="/action_page.php">
+			<div class="form-group">
+                    <label for="name">Name: </label>
+                    <input type="text" name="name" id="name" placeholder="Enter your name" required>
+                </div>
+				<div class="form-group">
+                    <label for="phone">Phone Number: </label>
+                    <input type="tel"  id="phone" placeholder="Enter your phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                </div>
+				<div class="form-group">
+                    <label for="address">Address </label>
+                    <textarea name="message" id="message"  placeholder="Enter your address" cols="5" rows="2" required ></textarea>
+                </div>
+			
+             <div class="form-group">
+                <label for="Order">Choose your dish</label>
+          <select name="tot_pin_requested" onchange="calculateAmount(this.value)" required>
+			<option value="" disabled selected>Choose your option</option>
+			<option value="40">French Fries </option>
+			<option value="55">Garlic Bread</option>
+			<option value="80">Pizza</option>
+			<option value="90">Pasta</option>
+			<option value="90">Shawarma</option>
+			<option value="90">Banofee Pie</option>
+			<option value="75"> Chicken Burger</option>
+			<option value="50">Chaco lava cake</option>
+			
+		</select>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="quantity">Select Quantity</label>
+                    <input type="number" id="quantity" name="quantity" min="1" max="5" required>
+                </div>
+                <br>
+				<label><b>Total Amount</b></label>
+				<input  name="tot_amount" id="tot_amount" type="text" readonly>
+				<div class="form-group">
+                    <label for="payment">Select your payment option</label>
+                    <select name="payment" id="payment" required>
+                        <option value="select">Please select option</option>
+                        <option value="cash on delivery">Cash on delivery</option>
+                        <option value="credit card">Cedit card</option>
+						 <option value="debit card ">Debit card</option>
+						  <option value="UPI">UPI</option>
+                    </select>
+                </div>
+				
+         
+                <div>
+                    <button class="btn" onclick="myOrder()" >Order Now </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section  id="reserve"  class = "banner">
+        <h2 style="font-size: 1.7rem;">BOOK YOUR RESERVATION</h2>
+        <div class = "card-container">
+            <div class = "card-img">
+               
+            </div>
+
+            <div class = "card-content">
+                <h3>Reservation</h3>
+                <form>
+                    <div class = "form-row">
+                        <select name = "days">
+                            <option value = "day-select">Select Day</option>
+                            <option value = "sunday">Sunday</option>
+                            <option value = "monday">Monday</option>
+                            <option value = "tuesday">Tuesday</option>
+                            <option value = "wednesday">Wednesday</option>
+                            <option value = "thursday">Thursday</option>
+                            <option value = "friday">Friday</option>
+                            <option value = "saturday">Saturday</option>
+                        </select>
+
+                        <select name = "hours" required>
+                            <option value = "hour-select">Select Hour</option>
+                            <option value = "10">10: 00</option>
+                            <option value = "10">12: 00</option>
+                            <option value = "10">14: 00</option>
+                            <option value = "10">16: 00</option>
+                            <option value = "10">18: 00</option>
+                            <option value = "10">20: 00</option>
+                            <option value = "10">22: 00</option>
+                        </select>
+                    </div>
+
+                    <div class = "form-row">
+                        <input type = "text" placeholder="Full Name" required>
+                        <input type = "text" placeholder="Phone Number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                    </div>
+
+                    <div class = "form-row">
+                        <input type = "number" placeholder="How Many Persons?" min = "1"  required>
+                        <input type = "submit" value = "BOOK" onclick="Booking()" required> 
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+</body>
+</html>
